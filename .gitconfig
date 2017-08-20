@@ -1,0 +1,43 @@
+[core]
+
+	autocrlf = true
+
+	excludesfile = C:\\Users\\Rune\\Documents\\gitignore_global.txt
+
+[user]
+
+	name = Rune Ibsen
+
+	email = rui@copenhagensoftware.com
+
+[push]
+
+	default = simple
+
+[alias]
+
+	removemerged = !git branch --merged | grep -v \"master\" | xargs -n 1 git branch -d
+
+	last = log -1 HEAD
+
+	unstage = reset HEAD --
+
+	ls = log --oneline
+
+	l = log --graph --oneline --decorate
+
+	ll = log --graph --oneline --decorate --branches --tags
+
+	lll = log --graph --oneline --decorate --all
+
+	rs = reset --hard HEAD~
+
+	revmerge = revert HEAD -m 1
+
+        nrb = branch -r --sort=committerdate
+
+        latest = log --oneline -n 10 --reverse
+	
+
+        aliases = config --get-regexp '^alias\\.'
+	amend = commit --amend --no-edit

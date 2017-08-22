@@ -49,3 +49,8 @@ endif
 set expandtab
 set tabstop=4
 set shiftwidth=4
+
+" put backup and .swp files in ~/vimtmp. If we cannot, use current dir (.)
+" instead
+set backupdir=~/vimtmp,.
+set directory=~/vimtmp,.

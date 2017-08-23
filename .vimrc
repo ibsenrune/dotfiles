@@ -54,3 +54,9 @@ set shiftwidth=4
 " instead
 set backupdir=~/vimtmp,.
 set directory=~/vimtmp,.
+
+" Tips from https://www.youtube.com/watch?v=XA2WjJbmmoM
+" Search down into subfolders
+set path+=**
+" Display all matching files when we tab complete
+set wildmenu

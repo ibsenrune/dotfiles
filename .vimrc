@@ -1,8 +1,11 @@
 colo elflord
 syntax on
 
-set cursorline
-hi CursorLine cterm=NONE ctermbg=darkgray
+"Do not use cursorline on cygwin as it is very slow
+if $TERM != 'cygwin'
+  set cursorline
+  hi CursorLine cterm=NONE ctermbg=darkgray
+endif
 
 set statusline=
 set statusline+=%#StatusLine#

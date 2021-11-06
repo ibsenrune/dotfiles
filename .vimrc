@@ -1,24 +1,42 @@
-colo elflord
+filetype on
+filetype plugin indent on
 syntax on
+set expandtab
+set tabstop=2
+set number
+set smartindent
 
-"Do not use cursorline on cygwin as it is very slow
-if $TERM != 'cygwin'
-  set cursorline
-  hi CursorLine cterm=NONE ctermbg=darkgray
+" VIM mappings ------------------------------
+"In INSERT mode, press jj to exit insert mode
+inoremap jj <Esc>
+
+let mapleader=" "
+" LSP commands, cf. vim-lsp
+nmap <buffer> gd <plug>(lsp-definition)
+nmap <buffer> gr <plug>(lsp-references)
+nmap <buffer> ge <plug>(lsp-document-diagnostics)
+nmap <buffer> gs <plug>(lsp-document-symbol)
+nmap <buffer> K <plug>(lsp-hover)
+
+" Navigate windows
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
+
+" Navigate buffers
+noremap <Leader>p :bp<cr>
+noremap <Leader>n :bn<cr>
+noremap <Leader>d :bd<cr>
+
+" VIM plugins --- load scripts configured via vim-plug
+if filereadable(expand("~/.vimrc.plug"))
+  source ~/.vimrc.plug
 endif
 
-set statusline=
-set statusline+=%#StatusLine#
-set statusline+=\ %f
-set statusline+=%m
-set statusline+=\ %y
-set statusline+=\ [%{&fileformat}]
+let $RC=expand('~/.vimrc')
 
-"Always show status line
-set laststatus=2 
+" Enable logging of LSP communication
+"let g:lsp_log_verbose=1
+"let g:lsp_log_file=expand('~/.vim/vim-lsp.log')
 
-"Show matching paren
-set showmatch
-
-"Highlight search matches
-set hlsearch

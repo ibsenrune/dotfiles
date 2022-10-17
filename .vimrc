@@ -30,11 +30,11 @@ if filereadable(expand("~/.vimrc.plug"))
 endif
 
 " LSP commands, cf. vim-lsp
-au FileType fsharp  nmap <buffer> <Leader>h <plug>(lsp-hover)
-au FileType fsharp  nmap <buffer> <Leader>d <plug>(lsp-definition)
-au FileType fsharp  nmap <buffer> gr <plug>(lsp-references)
-au FileType fsharp  nmap <buffer> ge <plug>(lsp-document-diagnostics)
-au FileType fsharp  nmap <buffer> gs <plug>(lsp-document-symbol)
+au FileType fsharp,haskell  nmap <buffer> <Leader>h <plug>(lsp-hover)
+au FileType fsharp,haskell  nmap <buffer> <Leader>d <plug>(lsp-definition)
+au FileType fsharp,haskell  nmap <buffer> gr <plug>(lsp-references)
+au FileType fsharp,haskell  nmap <buffer> ge <plug>(lsp-document-diagnostics)
+au FileType fsharp,haskell  nmap <buffer> gs <plug>(lsp-document-symbol)
 
 
 let $RC=expand('~/.vimrc')
